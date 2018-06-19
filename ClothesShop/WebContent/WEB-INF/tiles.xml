@@ -21,6 +21,10 @@
 	<definition name="product.detail" template="/WEB-INF/views/templates/templateUser.jsp">
 		<put-attribute name="content" value="/WEB-INF/views/product/detail.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="cart.index" template="/WEB-INF/views/templates/templateUser.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/cart/index.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>
      

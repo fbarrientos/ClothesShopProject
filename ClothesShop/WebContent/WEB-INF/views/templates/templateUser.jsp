@@ -209,8 +209,8 @@
 			<div class="navbar-buttons">
 
 				<div class="navbar-collapse collapse right" id="basket-overview">
-					<a href="basket.html" class="btn btn-primary navbar-btn"><i
-						class="fa fa-shopping-cart"></i><span class="hidden-sm">3
+					<a href="${pageContext.request.contextPath}/cart.htm" class="btn btn-primary navbar-btn"><i
+						class="fa fa-shopping-cart"></i><span class="hidden-sm">${sessionScope.cart.size() }
 							items in cart</span></a>
 				</div>
 				<!--/.nav-collapse -->

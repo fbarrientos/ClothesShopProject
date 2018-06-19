@@ -125,7 +125,7 @@
 			<div class="col-sm-6">
 				<div id="mainImage">
 					<img
-						src="${pageContext.request.contextPath }/assets/user/img/detailbig3.jpg"
+						src="${pageContext.request.contextPath }/assets/user/img/${product.urlimage}"
 						alt="" class="img-responsive">
 				</div>
 
@@ -152,7 +152,7 @@
 					<p class="price">$${product.price }</p>
 
 					<p class="text-center buttons">
-						<a href="basket.html" class="btn btn-primary"><i
+						<a href="${pageContext.servletContext.contextPath }/cart/buy/${product.idproduct}.htm" class="btn btn-primary"><i
 							class="fa fa-shopping-cart"></i> Add to cart</a> <a
 							href="basket.html" class="btn btn-default"><i
 							class="fa fa-heart"></i> Add to wishlist</a>
@@ -164,25 +164,25 @@
 				<div class="row" id="thumbs">
 					<div class="col-xs-4">
 						<a
-							href="${pageContext.request.contextPath }/assets/user/img/detailbig1.jpg"
+							href="${pageContext.request.contextPath }/assets/user/img/${product.urlimage}"
 							class="thumb"> <img
-							src="${pageContext.request.contextPath }/assets/user/img/detailsquare.jpg"
+							src="${pageContext.request.contextPath }/assets/user/img/${product.urlimage}"
 							alt="" class="img-responsive">
 						</a>
 					</div>
 					<div class="col-xs-4">
 						<a
-							href="${pageContext.request.contextPath }/assets/user/img/detailbig2.jpg"
+							href="${pageContext.request.contextPath }/assets/user/img/${product.urlimage}"
 							class="thumb"> <img
-							src="${pageContext.request.contextPath }/assets/user/img/detailsquare2.jpg"
+							src="${pageContext.request.contextPath }/assets/user/img/${product.urlimage}"
 							alt="" class="img-responsive">
 						</a>
 					</div>
 					<div class="col-xs-4">
 						<a
-							href="${pageContext.request.contextPath }/assets/user/img/detailbig3.jpg"
+							href="${pageContext.request.contextPath }/assets/user/img/${product.urlimage}"
 							class="thumb active"> <img
-							src="${pageContext.request.contextPath }/assets/user/img/detailsquare3.jpg"
+							src="${pageContext.request.contextPath }/assets/user/img/${product.urlimage}"
 							alt="" class="img-responsive">
 						</a>
 					</div>

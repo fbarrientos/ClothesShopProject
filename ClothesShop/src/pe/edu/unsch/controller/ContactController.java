@@ -12,6 +12,7 @@ public class ContactController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(ModelMap modelMap) {
 		modelMap.put("title", "Contact");
+		modelMap.put("action", "contact");
 		return "contact.index";
 	}
 	/*@RequestMapping(method=RequestMethod.GET)

@@ -190,7 +190,7 @@
 							<p class="buttons">
 								<a
 									href="${pageContext.request.contextPath }/product/detail/${product.idproduct}.htm"
-									class="btn btn-default">View detail</a> <a href="basket.html"
+									class="btn btn-default">View detail</a> <a href="${pageContext.servletContext.contextPath }/cart/buy/${product.idproduct}.htm"
 									class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add
 									to cart</a>
 							</p>
