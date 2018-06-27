@@ -456,27 +456,15 @@
 	    });
 	    
 	    var path = $("#path").val();
+	   	
 	    $('#btnSearch').click(function(event) {
-	    	//event.preventDefault();
-	    	var url = path + "/product/search/json/search";
-	    	alert(url);
+	    	event.preventDefault();
+	    	var url = path + "/product/categoryAll.htm";
 	    	$.ajax({
-	    		url: '<c:url value="/product/search.htm" />',
+	    		url: url,
 	    		data: { term: $("#textName").val()},
 	    		success: function (data, status) {
-	    			window.location.href = '<c:url value="/product/search.htm" />' + '?term=' + $("#textName").val();
-	    			alert("ajax 1: " + status + " url: " + url);
-	    			$.ajax({ 
-	                    url: url, 
-	                    data: { term: $("#textName").val()}, 
-	                    success: function (data, status) { 
-	                    	alert ("Success llamada 2: " + status);
-	                        
-	                    },
-	                    error: function(data,status,er) {
-	    	            	alert("error1: "+data+" status1: "+status+" er1: "+er);
-	    	            },
-	                });
+	    			window.location.href = url + '?term=' + $("#textName").val();
 	    		},
 	            error: function(data,status,er) {
 	            	alert("error: "+data+" status: "+status+" er:"+er);

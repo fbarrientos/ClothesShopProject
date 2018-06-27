@@ -26,8 +26,8 @@
 		<put-attribute name="content" value="/WEB-INF/views/cart/index.jsp"></put-attribute>
 	</definition>
 	
-	<definition name="product.search" template="/WEB-INF/views/templates/templateUser.jsp">
-		<put-attribute name="content" value="/WEB-INF/views/product/search.jsp"></put-attribute>
+	<definition name="product.categoryAll" template="/WEB-INF/views/templates/templateUser.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/product/categoryAll.jsp"></put-attribute>
 	</definition>
 
 </tiles-definitions>

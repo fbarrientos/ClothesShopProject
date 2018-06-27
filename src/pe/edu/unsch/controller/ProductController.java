@@ -1,9 +1,5 @@
 package pe.edu.unsch.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -51,28 +47,11 @@ public class ProductController {
 		return "product.detail";
 	}
 	
-	@RequestMapping(value = "search", method = RequestMethod.GET)
-	public String search(ModelMap modelMap) {
+	@RequestMapping(value = "categoryAll", method = RequestMethod.GET)
+	public String categorySearch(@RequestParam("term") String nameProduct, ModelMap modelMap) {
 		modelMap.put("title", "Search Product");
-		//List<Product> products = productService.findByName(name);
-		System.out.println("Holaaa vista search");
-		return "product.search";
-	}
-	
-	@RequestMapping(value="search/json/search", produces="application/json")
-	@ResponseBody
-	public Map<String, Object> findAll(@RequestParam("term") String nombreProduct) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		System.out.println("Estoy aquí");
-		List<Product> products = productService.findByName(nombreProduct);
-		
-		for (int i = 0; i < products.size(); i++) {
-			Product product = products.get(i);
-			map.put("nombre" + i, product.getIdproduct() + " " + product.getName());
-		}
-		System.out.println(map.toString());
-		
-		return map;
+		modelMap.put("products", productService.findByName(nameProduct));
+		return "product.categoryAll";
 	}
 	
 	/*@RequestMapping(value="/searchJSON", produces="application/json")
@@ -91,15 +70,4 @@ public class ProductController {
 		
 		return map;
 	}*/
-	
-	/*@RequestMapping(value="search", method=RequestMethod.GET)
-	@ResponseBody
-    public ModelAndView findAll(@RequestParam("term") String name) {
-		System.out.println("Que va: " + name);
-        ModelAndView mav = new ModelAndView();
-        List<Product> products = productService.findByName(name);
-        System.out.println(products.size());
-        mav.addObject("search", products);
-        return mav;
-    }*/
 }
