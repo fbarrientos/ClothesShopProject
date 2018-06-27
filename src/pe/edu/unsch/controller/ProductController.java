@@ -53,21 +53,4 @@ public class ProductController {
 		modelMap.put("products", productService.findByName(nameProduct));
 		return "product.categoryAll";
 	}
-	
-	/*@RequestMapping(value="/searchJSON", produces="application/json")
-	@ResponseBody
-	public Map<String, Object> findAll(@RequestParam("term") String name) {
-		System.out.println("Estoy aquí");
-		Map<String, Object> map = new HashMap<String, Object>();
-		
-		List<Product> products = productService.findByName(name);
-		
-		for (int i = 0; i < products.size(); i++) {
-			Product product = products.get(i);
-			map.put("name" + i, product.getIdproduct() + " " + product.getName());
-		}
-		System.out.println(map.toString());
-		
-		return map;
-	}*/
 }
