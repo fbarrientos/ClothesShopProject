@@ -66,13 +66,19 @@
 							class="fa fa-chevron-left"></i> Continue shopping</a>
 					</div>
 					<div class="pull-right">
+						<a href="category.html" class="btn btn-default"><i
+							class="fa fa-refresh"></i> Update basket</a>
+						<a href="${pageContext.request.contextPath }/cart/checkout.htm" class="btn btn-primary">
+						Proceed to checkout <i class="fa fa-chevron-right"></i></a>
+					</div>
+					<!-- <div class="pull-right">
 						<button class="btn btn-default">
 							<i class="fa fa-refresh"></i> Update basket
 						</button>
 						<button type="submit" class="btn btn-primary">
 							Proceed to checkout <i class="fa fa-chevron-right"></i>
 						</button>
-					</div>
+					</div> -->
 				</div>
 
 			</form>

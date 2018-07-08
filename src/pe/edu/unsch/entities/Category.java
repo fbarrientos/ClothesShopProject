@@ -1,5 +1,5 @@
 package pe.edu.unsch.entities;
-// Generated 02/06/2018 05:10:41 PM by Hibernate Tools 5.2.10.Final
+// Generated 06/07/2018 09:10:05 PM by Hibernate Tools 5.2.10.Final
 
 import java.util.HashSet;
 import java.util.List;
@@ -31,12 +31,11 @@ public class Category implements java.io.Serializable {
 	public Category() {
 	}
 
-	public Category(String name, Integer status, Integer parentid, Set<Product> products, List<Category> categories) {
+	public Category(String name, Integer status, Integer parentid, Set<Product> products) {
 		this.name = name;
 		this.status = status;
 		this.parentid = parentid;
 		this.products = products;
-		this.categories = categories;
 	}
 
 	@Id
@@ -96,4 +95,5 @@ public class Category implements java.io.Serializable {
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
+
 }

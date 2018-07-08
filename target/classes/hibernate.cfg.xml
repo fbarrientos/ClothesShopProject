@@ -14,5 +14,8 @@
   <mapping class="pe.edu.unsch.entities.Brand"/>
   <mapping class="pe.edu.unsch.entities.Colour"/>
   <mapping class="pe.edu.unsch.entities.Partner"/>
+  <mapping class="pe.edu.unsch.entities.Account"/>
+  <mapping class="pe.edu.unsch.entities.Orders"/>
+  <mapping class="pe.edu.unsch.entities.Ordersdetail"/>
  </session-factory>
 </hibernate-configuration>

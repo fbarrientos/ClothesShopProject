@@ -7,4 +7,7 @@
   <table-filter match-catalog="clothesshopdb" match-name="colour"/>
   <table-filter match-catalog="clothesshopdb" match-name="partner"/>
   <table-filter match-catalog="clothesshopdb" match-name="product"/>
+  <table-filter match-catalog="clothesshopdb" match-name="account"/>
+  <table-filter match-catalog="clothesshopdb" match-name="orders"/>
+  <table-filter match-catalog="clothesshopdb" match-name="ordersdetail"/>
 </hibernate-reverse-engineering>

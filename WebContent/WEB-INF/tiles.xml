@@ -29,6 +29,18 @@
 	<definition name="product.categoryAll" template="/WEB-INF/views/templates/templateUser.jsp">
 		<put-attribute name="content" value="/WEB-INF/views/product/categoryAll.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="account.register" template="/WEB-INF/views/templates/templateUser.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/account/register.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="account.myaccount" template="/WEB-INF/views/templates/templateUser.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/account/myaccount.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="account.customer-orders" template="/WEB-INF/views/templates/templateUser.jsp">
+		<put-attribute name="content" value="/WEB-INF/views/account/customer-orders.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>
      

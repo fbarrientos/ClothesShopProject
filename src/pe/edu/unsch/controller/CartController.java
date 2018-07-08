@@ -1,6 +1,7 @@
 package pe.edu.unsch.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -19,6 +20,15 @@ public class CartController {
 
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private OrdersService ordersService;
+	
+	@Autowired
+	private OrdersDetailService ordersDetailService;
+	
+	@Autowired
+	private AccountService accountService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(ModelMap modelMap) {
@@ -63,5 +73,44 @@ public class CartController {
 			if (cart.get(i).getProduct().getIdproduct() == id)
 				return i;
 		return -1;
+	}
+	
+	@RequestMapping(value = "checkout", method = RequestMethod.GET)
+	public String checkout(HttpSession session, ModelMap modelMap) {
+		modelMap.put("title", "Checkout");
+		modelMap.addAttribute("account", new Account());
+		if (session.getAttribute("username") == null) {
+			System.out.println("Estoy aquí!!");
+			return "account.register";
+		} else {
+			// Guardar Orden
+			Orders orders = new Orders();
+			orders.setAccount(accountService.find(session.getAttribute("username").toString()));
+			System.out.println(session.getAttribute("username").toString());
+			orders.setDatecreation(new Date());
+			orders.setName("New order");
+			orders.setStatus(false);
+			
+			Orders newOrder = ordersService.create(orders);
+			
+			// Guardar Detalle del orden
+			List<Item> cart = (List<Item>) session.getAttribute("cart");
+			for(Item item : cart) {
+				System.out.println("Orders detail " + newOrder.getIdorders());
+				Ordersdetail ordersdetail = new Ordersdetail();
+				ordersdetail.setOrders(newOrder);
+				ordersdetail.setProduct(item.getProduct());
+				ordersdetail.setPrice(item.getProduct().getPrice());
+				ordersdetail.setQuantity(item.getQuantity());
+				
+				ordersDetailService.create(ordersdetail);
+			}
+			
+			// Limpiar carrito
+			session.removeAttribute("cart");
+			
+			return "account.customer-orders";
+		}
+		
 	}
 }

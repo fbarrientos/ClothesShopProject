@@ -83,7 +83,7 @@
 				<ul class="menu">
 					<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
 					</li>
-					<li><a href="register.html">Register</a></li>
+					<li><a href="${pageContext.request.contextPath }/account/register.htm">Register</a></li>
 					<li><a href="${pageContext.request.contextPath }/contact.htm" onclick="">Contact</a></li>
 					<li><a href="#">Recently viewed</a></li>
 				</ul>
