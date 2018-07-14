@@ -10,4 +10,5 @@
   <table-filter match-catalog="clothesshopdb" match-name="account"/>
   <table-filter match-catalog="clothesshopdb" match-name="orders"/>
   <table-filter match-catalog="clothesshopdb" match-name="ordersdetail"/>
+  <table-filter match-catalog="clothesshopdb" match-name="user"/>
 </hibernate-reverse-engineering>

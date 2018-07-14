@@ -5,7 +5,7 @@
      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-
+	<!-- frontend -->
 	<definition name="home.index" template="/WEB-INF/views/templates/templateUser.jsp">
 		<put-attribute name="content" value="/WEB-INF/views/home/index.jsp"></put-attribute>
 	</definition>
@@ -41,6 +41,85 @@
 	<definition name="account.customer-orders" template="/WEB-INF/views/templates/templateUser.jsp">
 		<put-attribute name="content" value="/WEB-INF/views/account/customer-orders.jsp"></put-attribute>
 	</definition>
+	<!-- /frontend -->
+	
+	<!-- backend -->
+	<definition name="template" template="/WEB-INF/views/admin/templates/template.jsp">
+		
+        <put-attribute name="head" value="/WEB-INF/views/admin/templates/head.jsp" />
+        <put-attribute name="menuLeft" value="/WEB-INF/views/admin/templates/menuLeft.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/views/admin/templates/menu.jsp" />
+        
+        <put-list-attribute name="cssList" cascade="true">
+            <add-attribute value="/assets/admin/css/bootstrap.min.css" />
+            <add-attribute value="/assets/admin/font-awesome/css/font-awesome.min.css" />
+            <add-attribute value="/assets/admin/css/nprogress.css" />  
+            <add-attribute value="/assets/admin/css/green.css" />
+            <add-attribute value="/assets/admin/css/custom.min.css" />
+        </put-list-attribute>    
+        <put-list-attribute name="jsList" cascade="true">
+            <add-attribute value="/assets/admin/js/jquery.min.js" />
+            <add-attribute value="/assets/admin/js/bootstrap.min.js" />
+            <add-attribute value="/assets/admin/js/fastclick.js" />
+            <add-attribute value="/assets/admin/js/nprogress.js" />
+            <add-attribute value="/assets/admin/js/custom.min.js" />
+            <add-attribute value="/res/jsUtil/jsMessage.js" />
+        </put-list-attribute> 
+        
+    </definition>
+    
+	<definition name="main.index" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/admin/main/index.jsp"></put-attribute>
+		<put-list-attribute name="cssList" cascade="true" inherit="true">
+            <add-attribute value="/assets/admin/css/bootstrap-progressbar-3.3.4.min.css" />
+            <add-attribute value="/assets/admin/css/jqvmap.min.css" />
+        </put-list-attribute>
+        <put-list-attribute name="jsList" cascade="true" inherit="true">
+            <add-attribute value="/assets/admin/js/Chart.min.js" />
+            <add-attribute value="/assets/admin/js/gauge.min.js" />
+            <add-attribute value="/assets/admin/js/bootstrap-progressbar.min.js" />
+            <add-attribute value="/assets/admin/js/icheck.min.js" />
+            <add-attribute value="/assets/admin/js/skycons.js" />
+            <add-attribute value="/assets/admin/js/jquery.flot.js" />
+            <add-attribute value="/assets/admin/js/jquery.flot.pie.js" />
+            <add-attribute value="/assets/admin/js/jquery.flot.time.js" />
+            <add-attribute value="/assets/admin/js/jquery.flot.stack.js" />
+            <add-attribute value="/assets/admin/js/jquery.flot.orderBars.js" />
+            <add-attribute value="/assets/admin/js/jquery.flot.spline.min.js" />            
+            <add-attribute value="/assets/admin/js/curvedLines.js" />
+            <add-attribute value="/assets/admin/js/date.js" />        
+            <add-attribute value="/assets/admin/js/jquery.vmap.js" />
+            <add-attribute value="/assets/admin/js/jquery.vmap.world.js" />
+            <add-attribute value="/assets/admin/js/jquery.vmap.sampledata.js" />
+            <add-attribute value="/assets/admin/js/moment.min.js" />
+            <add-attribute value="/assets/admin/js/daterangepicker.js" />
+            <add-attribute value="/res/jsUtil/jsFlot.js" />
+        </put-list-attribute>
+	</definition>
+	
+	<definition name="category.index" extends="template">
+		<put-attribute name="content" value="/WEB-INF/views/admin/category/index.jsp"></put-attribute>
+		<put-list-attribute name="cssList" cascade="true" inherit="true">
+        	<add-attribute value="/assets/admin/css/dataTables.bootstrap.min.css" />
+            <add-attribute value="/assets/admin/css/buttons.bootstrap.min.css" />
+            <add-attribute value="/assets/admin/css/fixedHeader.bootstrap.min.css" />
+            <add-attribute value="/assets/admin/css/responsive.bootstrap.min.css" />
+            <add-attribute value="/assets/admin/css/scroller.bootstrap.min.css" />    
+        </put-list-attribute>
+        <put-list-attribute name="jsList" cascade="true" inherit="true">
+        	<add-attribute value="/assets/admin/js/jquery.dataTables.js" />
+            <add-attribute value="/assets/admin/js/jquery.dataTables.min.js" />
+            <add-attribute value="/assets/admin/js/dataTables.bootstrap.min.js" />
+            <add-attribute value="/assets/admin/js/validator.js" />
+            <add-attribute value="/res/jsUtil/jsDatatables.js" />
+            <add-attribute value="/res/jsUtil/jsValidator.js" />
+            <add-attribute value="/res/jsUser/jsCategory.js" />
+        </put-list-attribute>
+	</definition>
+	
+	<definition name="login.index" template="/WEB-INF/views/admin/login/index.jsp">
+	</definition>
+	<!-- /backend -->
 
 </tiles-definitions>
      

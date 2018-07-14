@@ -8,5 +8,7 @@ public interface CategoryDao {
 	
 	public List<Category> findAll();
 	public Category find(Integer id);
+	public List<Category> findAllCat();
+	public  void  create(Category category);
 	
 }

@@ -69,9 +69,7 @@
 
 			<hr>
 
-			<form
-				action="${pageContext.request.contextPath}/account/myaccount.htm"
-				method="post">
+			<form action="${pageContext.request.contextPath}/account/myaccount.htm" method="post">
 				<div class="form-group">
 					<label for="username">Username</label> <input type="text"
 						class="form-control" name="username">
